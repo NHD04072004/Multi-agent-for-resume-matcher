@@ -22,7 +22,7 @@ class ResumeService:
     def __init__(self, db: AsyncSession):
         self.db = db
         self.md = MarkItDown(enable_plugins=False)
-        self.json_agent_manager = AgentManager()
+        self.agent = AgentManager()
 
     async def convert_and_store_resume(
             self, file_bytes: bytes
@@ -135,7 +135,7 @@ class ResumeService:
             resume_text,
         )
         logger.info(f"Structured Resume Prompt: {prompt}")
-        raw_output = await self.json_agent_manager.run(prompt=prompt)
+        raw_output = await self.agent.run(prompt=prompt)
 
         try:
             structured_resume: StructuredResumeModel = (

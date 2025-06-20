@@ -29,5 +29,4 @@ pip install -r requirements.txt
 fastapi dev main.py
 ```
 
-## Error
-- Stored none-unicode (Postgresql)
+- With job input is unstructured

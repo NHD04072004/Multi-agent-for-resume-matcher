@@ -1,8 +1,12 @@
 from .resume_service import ResumeService
-from .exceptions import ResumeNotFoundError, ResumeParsingError
+from .job_service import JobService
+from .exceptions import ResumeNotFoundError, ResumeParsingError, JobNotFoundError, JobParsingError
 
 __all__ = [
     "ResumeService",
     "ResumeNotFoundError",
-    "ResumeParsingError"
+    "ResumeParsingError",
+    "JobService",
+    "JobNotFoundError",
+    "JobParsingError",
 ]

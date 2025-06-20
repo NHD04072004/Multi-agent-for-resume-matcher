@@ -10,7 +10,6 @@ class Job(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     job_id = Column(String, unique=True, nullable=False)
-    resume_id = Column(String, ForeignKey("resumes.resume_id"), nullable=False)
     content = Column(Text, nullable=False)
     created_at = Column(
         DateTime(timezone=True),
